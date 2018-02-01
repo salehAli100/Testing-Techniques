@@ -24,7 +24,7 @@ public class Test {
 		this.name = name;
 		this.Case = TestingCase;
 	}
-
+// this method is to read the file and return a list of Test objects, every object has test case name(string) and the functions or items(list) of test case
 	List<Test> readInput(File file) throws FileNotFoundException {
 		Scanner s = new Scanner(file);
 		while (s.hasNext()) {
