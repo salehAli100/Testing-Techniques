@@ -1,0 +1,4 @@
+T1= A,B,C,D
+T2= E,F,C,D
+T3= M,N,Q,R
+T4= M,N,Q,S
