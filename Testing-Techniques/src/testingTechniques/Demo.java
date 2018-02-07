@@ -9,7 +9,7 @@ public class Demo {
 	public static void main(String[] args) throws FileNotFoundException {
 		
 
-		File file = new File("TestCases_1.txt");
+		File file = new File("TestCases_2.txt");
 		Jac_index jac = new Jac_index();
 		jac.operation.readInput(file);
 		jac.pair();
