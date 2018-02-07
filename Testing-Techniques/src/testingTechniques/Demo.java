@@ -2,8 +2,8 @@ package testingTechniques;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-
-public class JccardDemo {
+// jaccard demo
+public class Demo {
 	
 	
 	public static void main(String[] args) throws FileNotFoundException {
