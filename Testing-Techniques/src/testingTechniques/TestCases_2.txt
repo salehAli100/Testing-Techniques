@@ -1,1 +1,8 @@
-
+T1=A,B,C,D
+T2=B,C,D,E
+T3=D,E,F,G
+T4=E,M,N,Q
+T5=M,N,R,S
+T6=K,Q,R,S
+T7=F,J,X,Y
+T8=A,K,F,S
