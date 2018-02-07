@@ -1,1 +1,78 @@
 
+package testingTechniques;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.*;
+import java.util.Map.Entry;
+
+public class Read_File {
+	
+	// private Test test_case; // or make as parameter in the readInput(File file,Test test)
+	List<String> testCases_names = new ArrayList<String>();
+	List<List>  functions_Lists = new ArrayList();
+	ArrayList unique_functions = new ArrayList();	
+	Map<String, List> testCases = new HashMap();
+	
+
+	void readInput(File file) throws FileNotFoundException {
+
+		Scanner s = new Scanner(file);
+		while (s.hasNext()) {
+
+			// 1) read line -> T1 = A, B, C, D 2) split by "=". As result we get two items
+			// which assigned to str_sorted [].
+			String line = s.nextLine(); // System.out.println("Line "+line);
+			String[] str_sorted = line.split("=");
+
+			// str_sorted[0]--> ex: "T1". str_sorted[1]--> holds test cases set ex:
+			// "A,B,C,D"
+			String test_case_name = str_sorted[0];
+			List<String> test_case_functions = Arrays.asList(str_sorted[1].split(","));
+			
+			testCases.put(test_case_name, test_case_functions);
+			
+// storing all function lists in functions_List  to be comapared in pair()  &&& storing all test cases names in testCases_names
+		    functions_Lists.add(test_case_functions);
+			testCases_names.add(test_case_name);
+			
+			for (int i = 0; i < test_case_functions.size(); i++) {
+
+				String temp = test_case_functions.get(i);
+				if (!unique_functions.contains(temp))
+					unique_functions.add(temp);
+			}		
+	}		
+		s.close();
+	}
+
+	/*Map<String, Double> sort(Map<String, Double> map) {
+
+		TestCasesComparator Comparator = new TestCasesComparator(map);
+		similarity_Sorted = new TreeMap<String, Double>(Comparator);
+		similarity_Sorted.putAll(map);
+
+		return similarity_Sorted;
+
+	}*/
+
+	public Map<String, List> getTestCases() {
+	/*	Map<String, List> sorted_map = new TreeMap(testCases);
+		testCases = sorted_map;*/
+		return testCases;
+	}
+
+	public List<String> getTestCases_names() {
+		return testCases_names;
+	}
+	
+	public List<List> getFunctions_Lists() {
+		return      functions_Lists;
+
+	}
+
+	public ArrayList getUnique_functions() {
+		return unique_functions;
+	}
+
+}
